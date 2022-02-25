@@ -4,7 +4,7 @@
 
 // Constructors
 Servo_c::Servo_c(){
-	this->servo = Servo servo;
+	this->servo = Servo());
 	this->min_range = 0;
 	this->max_range = 300;
 };
