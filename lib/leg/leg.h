@@ -41,11 +41,11 @@ public:
 
  private:
 
-	 Vector update_coxa_to_femur() const;
+	 Vector update_coxa_to_femur();
 
-	 Vector update_femur_to_tibia() const;
+	 Vector update_femur_to_tibia();
 
-	 Vector update_tibia_to_foot() const;
+	 Vector update_tibia_to_foot();
 
 
 

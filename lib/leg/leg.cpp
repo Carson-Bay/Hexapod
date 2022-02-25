@@ -25,4 +25,31 @@ Leg::Leg(Vector origin_to_coxa, int coxa_pin, int femur_pin, int tibia_pin,
 };
 
 // Accessors
-Vector Leg::find_end_point() const;
+Vector Leg::find_end_point() const {
+
+	Vector end_point = this->origin_to_coxa + this->coxa_to_femur
+									+ this->femur_to_tibia + this->tibia_to_foot;
+	return end_point;
+}
+
+// Mutators
+ bool Leg::move(Vector vec){
+
+ }
+
+private:
+
+ Vector Leg::update_coxa_to_femur(){
+	 double x = cos(this->coxa_motor.read()) * this->coxa_len;
+	 double y = sin(this->coxa_motor.read()) * this->coxa_len;
+	 double z = 0;
+
+ }
+
+ Vector Leg::update_femur_to_tibia(){
+
+ }
+
+ Vector Leg::update_tibia_to_foot(){
+
+ }
