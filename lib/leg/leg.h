@@ -37,18 +37,16 @@ public:
 	// Accessors
 	Vector find_end_point() const;
 
-	Vector get_coxa_to_femur() const;
-
-	Vector get_femur_to_tibia() const;
-
-	Vector get_tibia_to_foot() const;
-
-
-
 	// Mutators
-
-
 	 bool move(Vector vec);
+
+ private:
+
+	 Vector update_coxa_to_femur() const;
+
+	 Vector update_femur_to_tibia() const;
+
+	 Vector update_tibia_to_foot() const;
 
 
 
