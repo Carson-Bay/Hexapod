@@ -24,8 +24,6 @@ private:
 
 	// TO DO make a IK funtion that returns the equivalent to a vector array (probably a pointer to an array)
 
-
-
 public:
 
 	// Constructor
