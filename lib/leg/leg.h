@@ -18,9 +18,9 @@ private:
 	Servo_c femur_motor;
 	Servo_c tibia_motor;
 
-	double coxa_len;
-	double femur_len;
-	double tibia_len;
+	const double coxa_len;
+	const double femur_len;
+	const double tibia_len;
 
 	// TO DO make a IK funtion that returns the equivalent to a vector array (probably a pointer to an array)
 
@@ -32,7 +32,8 @@ public:
 	Leg();
 
 	// Parametric Constructors
-	Leg(Vector origin_to_coxa, int coxa_pin, int femur_pin, int tibia pin);
+	Leg(Vector origin_to_coxa, int coxa_pin, int femur_pin, int tibia_pin,
+		double coxa_len, double femur_len, double tibia_len);
 
 	// Accessors
 	Vector find_end_point() const;
