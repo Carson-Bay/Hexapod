@@ -47,6 +47,10 @@ public:
 
 	 Vector update_tibia_to_foot();
 
+	 Vector get_norm_from_plane() const;
+
+	 double get_angle_plane_vector(Vector norm, Vector vect) const;
+
 
 
 
