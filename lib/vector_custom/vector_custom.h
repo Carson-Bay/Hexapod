@@ -16,7 +16,7 @@ class Vector {
     // Constructors and Destructors
     // Empty default constructor
     Vector();
-    // Parametric contructor of vector
+    // Parametric constructor of vector
     Vector(double element_1, double element_2, double element_3);
     // Copy constructor
     Vector(const Vector& other);
