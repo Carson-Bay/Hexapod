@@ -13,7 +13,7 @@ class Vector {
     double storage_ [VECTOR_MAX_SIZE];
 
   public:
-    // Constructors and Destructors
+    // Constructors
     // Empty default constructor
     Vector();
     // Parametric constructor of vector
