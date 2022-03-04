@@ -1,5 +1,7 @@
 #include "leg.h"
 #include "Arduino.h"
+#include "Servo_custom.h"
+#include "vector_custom.h"
 
 
 // Constructor
@@ -43,13 +45,14 @@ Vector Leg::find_end_point() const {
 	Vector end_point = this->origin_to_coxa + this->coxa_to_femur
 					   + this->femur_to_tibia + this->tibia_to_foot;
 	return end_point;
-};
+}
 
 // Mutators
  bool Leg::move(Vector vec){
 
  }
 
+private:
 
  void Leg::update_coxa_to_femur(){ // TO DO
 	 double x = cos(this->coxa_motor.read()) * this->coxa_len;
@@ -67,7 +70,7 @@ Vector Leg::find_end_point() const {
  }
 
 Vector position_conversion(const Vector& point) const {
-	point -= this->origin_to_coxa'
+	point -= this->origin_to_coxa';
 
 };
 
