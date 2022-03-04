@@ -20,11 +20,14 @@ Servo_c::Servo_c(Servo servo, int min_range, int max_range){
 double Servo_c::read() const {
 	double angle = this->servo.read();
 	double converted_angle = 300 * angle / 180;
-	return converted_angle;
+	return converted_angle - 150;
 };
 
 // Mutators
 bool Servo_c::write(double angle){
+	// Servo is 0-300 and we will be coding in -150-150
+	// "0" is straight out of the bot
+	angle += 150;
 	if(angle >= this->min_range && angle <= this->max_range){
 		int microseconds = round(((2000/300) * angle) + 500);
 		this->servo.writeMicroseconds(microseconds);
