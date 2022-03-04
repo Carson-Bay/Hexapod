@@ -43,14 +43,13 @@ Vector Leg::find_end_point() const {
 	Vector end_point = this->origin_to_coxa + this->coxa_to_femur
 					   + this->femur_to_tibia + this->tibia_to_foot;
 	return end_point;
-}
+};
 
 // Mutators
  bool Leg::move(Vector vec){
 
  }
 
-private:
 
  void Leg::update_coxa_to_femur(){ // TO DO
 	 double x = cos(this->coxa_motor.read()) * this->coxa_len;

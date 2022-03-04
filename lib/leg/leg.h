@@ -5,7 +5,7 @@
 #include "Servo_custom.h"
 #include "vector_custom.h"
 
-class Leg(){
+class Leg {
 
 private:
 
@@ -38,7 +38,6 @@ public:
 	// Parametric Constructors
 	Leg(int coxa_pin, int femur_pin, int tibia_pin);
 
-
 	// Accessors
 	Vector find_end_point() const;
 
@@ -58,10 +57,6 @@ public:
 	 Vector get_norm_from_plane() const;
 
 	 double get_angle_plane_vector(Vector norm, Vector vect) const;
-
-
-
-
 
 
 };
