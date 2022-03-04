@@ -37,13 +37,6 @@ Leg::Leg(Vector origin_to_coxa, int coxa_pin, int femur_pin, int tibia_pin,
 
 };
 
-// Update Leg parameters (position, orientation and length)
-void update_config(Vector origin_to_coxa, , double coxa_len, double femur_len, double tibia_len) {
-
-
-
-};
-
 // Accessors
 Vector Leg::find_end_point() const {
 

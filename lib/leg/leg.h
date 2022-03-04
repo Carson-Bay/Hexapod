@@ -2,7 +2,7 @@
 #define LEG_H
 
 #include "Arduino.h"
-#include "Servo_c.h"
+#include "Servo_custom.h"
 #include "vector_custom.h"
 
 class Leg(){
