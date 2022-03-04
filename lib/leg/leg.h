@@ -20,6 +20,8 @@ private:
 	Servo_c femur_motor;
 	Servo_c tibia_motor;
 
+	double coxa_rotation;
+
 	// From Center of rotations
 	// Add more info later on exact ways these are measured
 	const double coxa_len;

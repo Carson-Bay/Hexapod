@@ -9,7 +9,12 @@ Leg::Leg(){
 
 // Parametric Constructors
 Leg::Leg(Vector origin_to_coxa, int coxa_pin, int femur_pin, int tibia_pin,
-	double coxa_len, double femur_len, double tibia_len){
+	double coxa_len, double femur_len, double tibia_len, double coxa_rotation){
+
+		// Important Vectors
+		this->origin_to_coxa = origin_to_coxa;
+
+		//Servos
 		this->coxa_motor = Servo_c();
 		this->femur_motor = Servo_c();
 		this->tibia_motor = Servo_c();
@@ -17,16 +22,26 @@ Leg::Leg(Vector origin_to_coxa, int coxa_pin, int femur_pin, int tibia_pin,
 		this->coxa_motor.attach(coxa_pin);
 		this->femur_motor.attach(femur_pin);
 		this->tibia_motor.attach(tibia_pin);
+
+		// length of legs
+		this->coxa_len = coxa_len;
+		this->femur_len = femur_len;
+		this->tibia_len = tibia_len;
+
+		// Degrees off
+		this->coxa_rotation = coxa_rotation;
+
+		update_coxa_to_femur();
+		update_femur_to_tibia();
+		update_tibia_to_foot();
+
 };
 
 // Update Leg parameters (position, orientation and length)
-void update_config(Vector origin_to_coxa, double coxa_rotation, double coxa_len, double femur_len, double tibia_len) {
-	this->origin_to_coxa = origin_to_coxa;
-	// Degrees off
-	this->coxa_rotation = coxa_rotation;
-	this->coxa_len = coxa_len;
-	this->femur_len = femur_len;
-	this->tibia_len = tibia_len;
+void update_config(Vector origin_to_coxa, , double coxa_len, double femur_len, double tibia_len) {
+
+
+
 };
 
 // Accessors
@@ -44,18 +59,18 @@ Vector Leg::find_end_point() const {
 
 private:
 
- void Leg::update_coxa_to_femur(){
+ void Leg::update_coxa_to_femur(){ // TO DO
 	 double x = cos(this->coxa_motor.read()) * this->coxa_len;
 	 double y = sin(this->coxa_motor.read()) * this->coxa_len;
 	 double z = 0;
 
  }
 
- void Leg::update_femur_to_tibia(){
+ void Leg::update_femur_to_tibia(){ // TO DO
 
  }
 
- void Leg::update_tibia_to_foot(){
+ void Leg::update_tibia_to_foot(){ // TO DO
 
  }
 
