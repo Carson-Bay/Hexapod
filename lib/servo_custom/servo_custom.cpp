@@ -9,7 +9,7 @@ Servo_c::Servo_c(){
 	this->max_range = 300;
 };
 
-// Parametric constructor
+// Parametric constructor 
 Servo_c::Servo_c(Servo servo, int min_range, int max_range){
 	this->servo = servo;
 	this->min_range = min_range;
