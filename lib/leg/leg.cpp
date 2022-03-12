@@ -122,7 +122,7 @@ Vector Leg::leg_to_hexapod(const Vector& point) const {
  //return normal vector of the plane of the leg
  Vector Leg::get_norm_from_plane() const {
 	 // May need checks if the norm vector is the right way around
-	 // (As cross prooduct is not commutative)
+	 // (As cross product is not commutative)
 	 // Norm is in CW direction around the bot
 	 // May want to change to CCW due to angles being positive in CCW
 	 Vector femur_to_coxa = this->coxa_to_femur * -1;
