@@ -84,7 +84,6 @@ Vector Vector::normalize() const {
 void Vector::set(int INDEX, double val) {
     if(INDEX < 0 || INDEX > 2){
         Serial.println("ERROR: Index out of range");
-        return 0;
     }
     this->storage_[INDEX] = val;
 }
