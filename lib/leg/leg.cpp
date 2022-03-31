@@ -147,16 +147,16 @@ Vector Leg::leg_to_hexapod(const Vector& point) const {
  }
 
 
- double * point_to_angles(const Vector& point) const {
+ double * Leg::point_to_angles(const Vector& point) const {
 	 // Do IK math to return angles
 
 	 // Find coxa angle
-	 Vector norm = get_norm_from_plane();
-	 double coxa_angle = get_angle_plane_vector(norm, point);
+	 Vector norm = this->get_norm_from_plane();
+	 double coxa_angle = this->get_angle_plane_vector(norm, point);
 
 	 // Find tibia angle
-	 Vector new_femur_to_foot = // TO DO SHAWN
-	 double tibia_angle = acos((femur_len^2 + tibia_len^2 - new_femur_to_foot.magnitude()^2) / (2 * femur_len * tibia_len));
+	 Vector new_femur_to_foot;// TO DO SHAWN
+	 double tibia_angle = acos((pow(femur_len, 2) + pow(tibia_len, 2) - pow(new_femur_to_foot.magnitude(), 2)) / (2 * femur_len * tibia_len));
 
 	 // Find femur angle
 	 double femur_angle = asin(new_femur_to_foot.magnitude() * sin(femur_angle) / sin(tibia_angle));
