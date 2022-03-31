@@ -97,12 +97,9 @@ Vector Leg::find_end_point() const {
 // Converts input point from hexapod to leg space
 // Will have to write a backwards conversion for leg to hexapod space
 Vector Leg::hexapod_to_leg(const Vector& point) const {
-	Vector new_point = point - this->origin_to_coxa;
+	Vector temp_new_point = point - this->origin_to_coxa;
 	// Z component of vector stays constant as we are rotating around the z-axis
-	double x = new_point.get_x();
-	double y = new_point.get_y();
-	new_point.set_x(cos(-this->coxa_rotation)*x - sin(-this->coxa_rotation)*y);
-	new_point.set_y(sin(-this->coxa_rotation)*x + cos(-this->coxa_rotation)*y);
+	Vector new_point = temp_new_point.rotate(this->coxa_rotation);
 	return new_point;
 }
 
@@ -157,8 +154,8 @@ Vector Leg::leg_to_hexapod(const Vector& point) const {
 
 	 // Get in proper plane now that coxa angle is determined
 
-	 Vector new_femur_to_tibia = this->femur_to_tibia.rotate(coxa_angle);
-	 Vector new_tibia_to_foot = this->tibia_to_foot.rotate(coxa_angle);
+	 Vector new_femur_to_tibia = (this->femur_to_tibia).rotate(coxa_angle);
+	 Vector new_tibia_to_foot = (this->tibia_to_foot).rotate(coxa_angle);
 
 	 // Find tibia angle
 	 Vector new_femur_to_foot = new_femur_to_tibia + new_tibia_to_foot;
