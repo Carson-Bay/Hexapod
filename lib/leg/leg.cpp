@@ -123,10 +123,9 @@ Vector Leg::leg_to_hexapod(const Vector& point) const {
  Vector Leg::get_norm_from_plane() const {
 	 // May need checks if the norm vector is the right way around
 	 // (As cross product is not commutative)
-	 // Norm is in CW direction around the bot
-	 // May want to change to CCW due to angles being positive in CCW
+	 // Norm is in CCW direction around the bot
 	 Vector femur_to_coxa = this->coxa_to_femur * -1;
-	 Vector norm = femur_to_coxa % this->femur_to_tibia;
+	 Vector norm = this->femur_to_tibia % femur_to_coxa;
 	 // May not need normalize component
 	 return norm.normalize();
 
@@ -152,7 +151,7 @@ Vector Leg::leg_to_hexapod(const Vector& point) const {
 	 // Do IK math to return angles
 
 	 // Find coxa angle
-	 Vector norm = get_norm_from_plane;
+	 Vector norm = get_norm_from_plane();
 	 double coxa_angle = get_angle_plane_vector(norm, point);
 
 	 // Find tibia angle
