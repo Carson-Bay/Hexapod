@@ -42,7 +42,9 @@ public:
 	Vector find_end_point() const;
 
 	// Mutators
-	 bool move(Vector vec);
+	bool move(Vector vec);
+
+
 
  private:
 	 // Updates the vectors from member to member (tail to tip)
@@ -62,6 +64,8 @@ public:
 	 // Return angle between vector and plane using plane's normal vector
 	 double get_angle_plane_vector(const Vector& norm, const Vector& vect) const;
 
+	 //return angles for each motor to move to new point
+	 double * point_to_angles(const Vector& point) const;
 };
 
 
