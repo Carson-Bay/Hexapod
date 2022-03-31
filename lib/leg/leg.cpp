@@ -154,8 +154,8 @@ Vector Leg::leg_to_hexapod(const Vector& point) const {
 
 	 // Get in proper plane now that coxa angle is determined
 
-	 Vector new_femur_to_tibia = (this->femur_to_tibia).rotate(coxa_angle);
-	 Vector new_tibia_to_foot = (this->tibia_to_foot).rotate(coxa_angle);
+	 Vector new_femur_to_tibia = this->femur_to_tibia.rotate(coxa_angle);
+	 Vector new_tibia_to_foot = this->tibia_to_foot.rotate(coxa_angle);
 
 	 // Find tibia angle
 	 Vector new_femur_to_foot = new_femur_to_tibia + new_tibia_to_foot;
