@@ -46,6 +46,9 @@ class Vector {
     // Returns normalized version of vector
     Vector normalize() const;
 
+    // Returns rotated Vector
+    Vector rotate(double angle) const;
+
     // Mutators
     // Set element at index
     void set(int INDEX, double val);
@@ -58,6 +61,8 @@ class Vector {
 
     // Set z component (index 2)
     void set_z(double val);
+
+
 
     // CAN ADD SINGLE ADDITION ETC FUNCTIONS TO ONE ELEMENT LATER MAYBE who knows
 
