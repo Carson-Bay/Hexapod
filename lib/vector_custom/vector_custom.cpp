@@ -79,6 +79,15 @@ Vector Vector::normalize() const {
     return temp;
 }
 
+Vector Vector::rotate(double angle) const{
+    double x = this->get_x();
+    double y = this->get_y();
+    double z = this->get_z();
+    double new_x = cos(angle)*x - sin(angle)*y;
+	double new_y = sin(angle)*x + cos(angle)*y;
+    return Vector(new_x, new_y, z);
+}
+
 // Mutators
 // Set element at index
 void Vector::set(int INDEX, double val) {
