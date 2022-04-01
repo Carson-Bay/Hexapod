@@ -3,8 +3,6 @@
 #include "Servo_custom.h"
 #include "vector_custom.h"
 
-const double PI = 3.1459
-
 // Constructors
 // Default constructor (p much just here to stop errors)
 // Any of the value are subject to change if need be
