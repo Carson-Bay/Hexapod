@@ -1,7 +1,7 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 const int VECTOR_MAX_SIZE = 3;
 

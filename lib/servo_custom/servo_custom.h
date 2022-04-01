@@ -1,7 +1,7 @@
 #ifndef SERVO_H
 #define SERVO_H
 
-#include "Arduino.h"
+#include <Arduino.h>
 #include <Servo.h>
 
 class Servo_c {
@@ -17,7 +17,7 @@ public:
 	Servo_c();
 
 	// Parametric constructor
-	Servo_c(Servo servo, int min_range, int max_range);
+	Servo_c(int min_range, int max_range);
 
 	// Accessors
 	double read() const;
@@ -25,7 +25,7 @@ public:
 	// Mutators
 	bool write(double angle);
 
-	void attach(uint pin);
+	void attach(int pin);
 };
 
 

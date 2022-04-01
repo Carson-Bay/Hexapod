@@ -1,17 +1,18 @@
-#include "Arduino.h"
+#include <Arduino.h>
 #include <Servo.h>
+#include "servo_custom.h"
 
 
 // Constructors
 Servo_c::Servo_c(){
-	this->servo = Servo());
+	this->servo = Servo();
 	this->min_range = 0;
 	this->max_range = 300;
 };
 
-// Parametric constructor 
-Servo_c::Servo_c(Servo servo, int min_range, int max_range){
-	this->servo = servo;
+// Parametric constructor
+Servo_c::Servo_c(int min_range, int max_range){
+	this->servo = Servo();
 	this->min_range = min_range;
 	this->max_range = max_range;
 };
@@ -27,8 +28,8 @@ double Servo_c::read() const {
 bool Servo_c::write(double angle){
 	// Servo is 0-300 and we will be coding in -150-150
 	// "0" is straight out of the bot
-	angle += 150;
 	if(angle >= this->min_range && angle <= this->max_range){
+		angle += 150;
 		int microseconds = round(((2000/300) * angle) + 500);
 		this->servo.writeMicroseconds(microseconds);
 		return true;
@@ -36,6 +37,6 @@ bool Servo_c::write(double angle){
 	else{return false;}
 };
 
-void Servo_c::attach(uint pin){
+void Servo_c::attach(int pin){
 	this->servo.attach(pin);
 };
