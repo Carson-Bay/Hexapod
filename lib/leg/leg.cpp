@@ -143,8 +143,7 @@ Vector Leg::leg_to_hexapod(const Vector& point) const {
 	 return 90 - angle;
  }
 
-
- double * Leg::point_to_angles(const Vector& point) const {
+	void Leg::point_to_angles(const Vector& point, double (&angles)[3]) const {
 	 // Do IK math to return angles
 
 
@@ -164,6 +163,9 @@ Vector Leg::leg_to_hexapod(const Vector& point) const {
 	 // Find femur angle
 	 double femur_angle = asin(new_femur_to_foot.magnitude() * sin(femur_angle) / sin(tibia_angle));
 
+	 angles[0] = coxa_angle;
+	 angles[1] = femur_angle;
+	 angles[2] = tibia_angle;
 
 
  }
