@@ -168,3 +168,14 @@ Vector Leg::leg_to_hexapod(const Vector& point) const {
 
 
  }
+// Carson... how to know size of array of points so that one can pass 4d array
+// by reference where size is necessary in initialization of function paramters on next line
+ void Leg::points_to_movement() const{
+	 // Get angles with constant time difference or not?
+
+	 // Use IK function to determine the 3 angkes for each point
+
+	 // Possible need to 'Riffle Shuffle' angles for proper timing
+
+	 // Send each angle after waiting appropriate time (possibly separate function)
+ }

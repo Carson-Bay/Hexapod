@@ -66,6 +66,10 @@ public:
 
 	 // return angles for each motor to move to new point
 	 void point_to_angles(const Vector& point, double (&angles)[3]) const;
+
+	 // Takes in list of angles over time and outputs 4D list equivalent to 3 lists
+	 // of angles over time then sends each angle after waiting right amount of time
+	 void points_to_movement() const; //Determine parameters
 };
 
 
